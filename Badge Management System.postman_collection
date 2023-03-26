@@ -1,0 +1,1319 @@
+{
+	"info": {
+		"_postman_id": "c1550bd6-6dc2-4404-8e54-4cddb5c624df",
+		"name": "BadgeManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7308417"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "assign badge to member",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/member/1/badge/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"member",
+								"1",
+								"badge",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign timeslot to weekday",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/weekday/1/timeslot/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"weekday",
+								"1",
+								"timeslot",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign weekday to schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/schedule/1/weekday/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"schedule",
+								"1",
+								"weekday",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign schedule to location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/location/1/schedule/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"location",
+								"1",
+								"schedule",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign location to plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/plan/1/location/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"plan",
+								"1",
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign plan to membership",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/membership/1/plan/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"membership",
+								"1",
+								"plan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign membership to member",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}admin/member/1/membership/1",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"member",
+								"1",
+								"membership",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "badge",
+			"item": [
+				{
+					"name": "get all badges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}badges",
+							"host": [
+								"{{base_url}}badges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get badge with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a badge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"active\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}badges",
+							"host": [
+								"{{base_url}}badges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update badge with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"active\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}badges/1",
+							"host": [
+								"{{base_url}}badges"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a badge",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}badges/1",
+							"host": [
+								"{{base_url}}badges"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckIN Declined",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"badgeId\": 1111,\r\n    \"planId\": 1111,\r\n    \"locationId\": 111101,\r\n    \"checkerId\": 0,\r\n    \"calendar\": \"2023-03-24T07:00:00.000+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}badges/process",
+							"host": [
+								"{{base_url}}badges"
+							],
+							"path": [
+								"process"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckIN Approved",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"badgeId\": 1111,\r\n    \"planId\": 1111,\r\n    \"locationId\": 111101,\r\n    \"checkerId\": 0,\r\n    \"calendar\": \"2023-03-24T09:10:00.000+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}badges/process",
+							"host": [
+								"{{base_url}}badges"
+							],
+							"path": [
+								"process"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "get all locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}locations",
+							"host": [
+								"{{base_url}}locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get location with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}locations/1",
+							"host": [
+								"{{base_url}}locations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a location Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Recreation Center\",\r\n    \"description\": \"gym\",\r\n    \"capacity\": 200,\r\n    \"type\": \"GYMNASIUM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}locations",
+							"host": [
+								"{{base_url}}locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update locations with id Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Rec Center\",\r\n    \"description\": \"gym\",\r\n    \"capacity\": 200,\r\n    \"type\": \"GYMNASIUM\",\r\n    \"schedule\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}locations/1",
+							"host": [
+								"{{base_url}}locations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a location Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}locations/1",
+							"host": [
+								"{{base_url}}locations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "get all members",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members",
+							"host": [
+								"{{base_url}}members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111/transactions",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member plans",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111/plans",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member badges",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111/badges",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111",
+								"badges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member active badge",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111/badges/active",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111",
+								"badges",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member memberships",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111/memberships",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111",
+								"memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"haradiya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members",
+							"host": [
+								"{{base_url}}members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update member",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vishal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}members/1111",
+							"host": [
+								"{{base_url}}members"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "membership",
+			"item": [
+				{
+					"name": "get all membership",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}memberships",
+							"host": [
+								"{{base_url}}memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get location with id Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}memberships/1111",
+							"host": [
+								"{{base_url}}memberships"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a membership",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-01-01\",\r\n    \"endDate\": \"2023-12-12\",\r\n    \"membershipType\": \"LIMITED\",\r\n    \"resetCycle\": \"WEEKLY\",\r\n    \"lastRestDate\": \"2023-12-12\",\r\n    \"allowedCheckIn\": 20,\r\n    \"currentCheckIn\": 10,\r\n    \"plan\": null,\r\n    \"maximumCheckInReached\": false,\r\n    \"membershipActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}memberships",
+							"host": [
+								"{{base_url}}memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update membership with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"startDate\": \"2023-01-01\",\r\n    \"endDate\": \"2023-12-12\",\r\n    \"membershipType\": \"LIMITED\",\r\n    \"resetCycle\": \"WEEKLY\",\r\n    \"lastRestDate\": \"2023-12-12\",\r\n    \"allowedCheckIn\": 22,\r\n    \"currentCheckIn\": 10,\r\n    \"plan\": null,\r\n    \"maximumCheckInReached\": false,\r\n    \"membershipActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}memberships/1",
+							"host": [
+								"{{base_url}}memberships"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a membership",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}badges/1",
+							"host": [
+								"{{base_url}}badges"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plan",
+			"item": [
+				{
+					"name": "get all plans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}plans",
+							"host": [
+								"{{base_url}}plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a plan with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}plans/1111",
+							"host": [
+								"{{base_url}}plans"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dining Student\",\r\n    \"description\": \"Argiro description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}plans",
+							"host": [
+								"{{base_url}}plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update plan with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Dining Student\",\r\n    \"description\": \"Argiro description updated\",\r\n    \"locations\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}plans/1",
+							"host": [
+								"{{base_url}}plans"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a plan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}plans/1",
+							"host": [
+								"{{base_url}}plans"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "schdule",
+			"item": [
+				{
+					"name": "get all schedules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}schedules",
+							"host": [
+								"{{base_url}}schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a schedules with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}schedules/1111",
+							"host": [
+								"{{base_url}}schedules"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a schedules",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Morning\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}schedules",
+							"host": [
+								"{{base_url}}schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update schedules with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mid night\",\r\n    \"weekDayList\": null,\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}schedules/1",
+							"host": [
+								"{{base_url}}schedules"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a schedules",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}schedules/1",
+							"host": [
+								"{{base_url}}schedules"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timeslot",
+			"item": [
+				{
+					"name": "get all timeslots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}timeslots",
+							"host": [
+								"{{base_url}}timeslots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a timeslots with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}timeslots/1111",
+							"host": [
+								"{{base_url}}timeslots"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a timeslots",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startTime\": \"08:30:00\",\r\n    \"endTime\": \"10:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}timeslots",
+							"host": [
+								"{{base_url}}timeslots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update timeslots with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"startTime\": \"00:00:00\",\r\n    \"endTime\": \"00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}timeslots/1",
+							"host": [
+								"{{base_url}}timeslots"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a schedules Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}timeslots/1",
+							"host": [
+								"{{base_url}}timeslots"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "get all transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}transactions",
+							"host": [
+								"{{base_url}}transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a transactions with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}transactions/1111",
+							"host": [
+								"{{base_url}}transactions"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"dateTime\": \"2023-07-07 21:46:27.000000\",\r\n    \"transactionType\": \"ALLOWED\",\r\n    \"transactionTypeDescription\": \"Food Good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}transactions",
+							"host": [
+								"{{base_url}}transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update transactions with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"dateTime\": \"2023-07-07 21:46:27.000000\",\r\n    \"transactionType\": \"ALLOWED\",\r\n    \"transactionTypeDescription\": \"Good Food Good Good Food Good\",\r\n    \"badge\": null,\r\n    \"membership\": null,\r\n    \"location\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}transactions/1",
+							"host": [
+								"{{base_url}}transactions"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a transactions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}transactions/1",
+							"host": [
+								"{{base_url}}transactions"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "weekday",
+			"item": [
+				{
+					"name": "get all week-days",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}week-days",
+							"host": [
+								"{{base_url}}week-days"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a week-days with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}week-days/1111",
+							"host": [
+								"{{base_url}}week-days"
+							],
+							"path": [
+								"1111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a week-days",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SUNDAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}week-days",
+							"host": [
+								"{{base_url}}week-days"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update week-days with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"MONDAY\",\r\n    \"timeSlotList\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}week-days/1",
+							"host": [
+								"{{base_url}}week-days"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a transactions Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}week-days/1",
+							"host": [
+								"{{base_url}}week-days"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
